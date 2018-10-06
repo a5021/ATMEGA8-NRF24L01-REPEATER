@@ -91,7 +91,6 @@ volatile unsigned int soundDuration = 0,
 
 // External Interrupt 1 service routine
 ISR(INT1_vect) {
-// Place your code here
   globalFlag |= NRF_IRQ;
 }
 
@@ -358,8 +357,6 @@ uint8_t nrf_transmit(uint8_t src[], uint8_t len) {
   _delay_us(10);
   CE_LOW();
   
-  // T_PLL + T_OA + T_IRQ = 130uS + 64,5uS + 6uS =
-  //  _delay_us(190);
   #define TX_TIMEOUT  200
 
   int tx_timeout = TX_TIMEOUT;
@@ -433,10 +430,6 @@ uint16_t nrf_transmit_special(uint8_t src[], uint8_t len) {
 
   // start transmitting
   CE_HIGH();
-    // _delay_us(10);
-  
-  // T_PLL + T_OA + T_IRQ = 130uS + 64,5uS + 6uS =
-  //  _delay_us(190);
 
   while ((globalFlag & NRF_IRQ) != NRF_IRQ);
 
@@ -569,8 +562,6 @@ uint8_t nrf_init(uint8_t channel) {
     0 * NRF24_SETUP_RETR_ARD_3
   );  
   
-  // nrf_write_register(EN_AA, 0);  // disable 'Auto Acknowledgment'
-
   nrf_write_register(RF_CH, channel); // set radio channel
   
   nrf_write_register(RF_SETUP,   // set radio channel
