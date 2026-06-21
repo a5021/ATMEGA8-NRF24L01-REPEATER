@@ -1,6 +1,6 @@
 # Hey Emacs, this is a -*- makefile -*-
 #----------------------------------------------------------------------------
-# WinAVR Makefile Template written by Eric B. Weddington, Jörg Wunsch, et al.
+# WinAVR Makefile Template written by Eric B. Weddington, JÃ¶rg Wunsch, et al.
 #
 # Released to the Public Domain
 #
@@ -115,7 +115,8 @@ DEBUG = dwarf-2
 #     Use forward slashes for directory separators.
 #     For a directory that has spaces, enclose it in quotes.
 # EXTRAINCDIRS = C:/WinAVR-20100110/avr/include
-EXTRAINCDIRS = "C:/Program Files/Atmel/Studio/7.0/toolchain/avr8/avr8-gnu-toolchain/avr/include"
+# EXTRAINCDIRS (uncomment and set for Windows Atmel Studio):
+# EXTRAINCDIRS = "C:/Program Files/Atmel/Studio/7.0/toolchain/avr8/avr8-gnu-toolchain/avr/include"
 
 
 # Compiler flag to set the C Standard level.
