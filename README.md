@@ -2,9 +2,7 @@
 
 [![Build](https://github.com/a5021/ATMEGA8-NRF24L01-REPEATER/actions/workflows/build.yml/badge.svg)](https://github.com/a5021/ATMEGA8-NRF24L01-REPEATER/actions/workflows/build.yml) [![MCU](https://img.shields.io/badge/MCU-ATmega8-00A9E0)]() [![Radio](https://img.shields.io/badge/Radio-nRF24L01+-00A9E0)]() [![License](https://img.shields.io/badge/License-MIT-yellow)]()
 
-Wireless sensor data repeater for ATmega8 and nRF24L01+. Receives environmental telemetry from a remote multisensor node (BMP180, Si7021, BH1750, ADC), controls a load relay based on light level, and rebroadcasts the datagram across multiple channels with acknowledgment and status reporting.
-
-The sensor node firmware is available at [STM32F030F4P6-WIRELESS-MULTISENSOR](https://github.com/a5021/STM32F030F4P6-WIRELESS-MULTISENSOR).
+Wireless sensor data repeater for ATmega8 and nRF24L01+. Receives environmental telemetry from a remote multisensor node ([STM32F030F4P6-WIRELESS-MULTISENSOR](https://github.com/a5021/STM32F030F4P6-WIRELESS-MULTISENSOR)), controls a load relay based on light level, and retransmits the datagram on multiple channels for reception by devices such as [STM8S-NRF24L01-RECEIVER](https://github.com/a5021/STM8S-NRF24L01-RECEIVER).
 
 ## Features
 
@@ -172,5 +170,5 @@ m1.cmd             Build script variant (Windows cmd)
 ## Related Projects
 
 - [STM32F030F4P6-WIRELESS-MULTISENSOR](https://github.com/a5021/STM32F030F4P6-WIRELESS-MULTISENSOR) — wireless sensor node that transmits the datagrams received by this repeater
-- [STM8S-NRF24L01-RECEIVER](https://github.com/a5021/STM8S-NRF24L01-RECEIVER) — STM8S-based nRF24L01+ receiver
+- [STM8S-NRF24L01-RECEIVER](https://github.com/a5021/STM8S-NRF24L01-RECEIVER) — STM8S-based nRF24L01+ receiver that processes the retransmitted data
 - [NRF52832-BME280-RADIO](https://github.com/a5021/NRF52832-BME280-RADIO) — nRF52832-based BME280 radio sensor
