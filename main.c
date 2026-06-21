@@ -465,6 +465,10 @@ uint16_t nrf_transmit_special(uint8_t src[], uint8_t len) {
 }
 
 
+void delay_ms_var(uint16_t ms) {
+    while (ms--) _delay_ms(1);
+}
+
 uint8_t nrf_broadcast(uint8_t src[], uint8_t len) {
   uint8_t i, j, tx_status;
   
@@ -501,7 +505,7 @@ uint8_t nrf_broadcast(uint8_t src[], uint8_t len) {
       CE_HIGH();
       _delay_us(10);
       CE_LOW();
-      _delay_ms((rand() % 10) + 1);  /* Make random 1 .. 10ms delay */
+      delay_ms_var((rand() % 10) + 1);  /* Make random 1 .. 10ms delay */
     }
   }
 
